@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Carousel from "../components/Carousel";
 import Header from "../components/Header";
+import Menu from "../components/Menu";
 
 const Profile = () => {
   const images = [
@@ -13,6 +14,7 @@ const Profile = () => {
   return (
     <div>
       <Header />
+      <Menu />
       <Carousel images={images} />
       <Navigation />
     </div>
