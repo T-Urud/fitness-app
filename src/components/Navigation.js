@@ -73,16 +73,19 @@ const navItems = [
 const Navigation = () => {
   return (
     <div>
-      <nav>
-        <ul>
+      <nav className="border-t-1 border-solid border-[rgb(193, 192, 192)] fixed bottom-0 left-0 right-0 py-1">
+        <ul className="flex content-evenly gap-12">
           {navItems.map((item, index) => (
-            <li key={index}>
+            <li
+              key={index}
+              className="flex flex-col content-center items-center cursor-pointer"
+            >
               <NavLink
                 to={item.path}
-                className={(nav) => (nav.isActive ? "actived" : "")}
+                className={(nav) => (nav.isActive ? "text-black" : "")}
               >
-                {item.icon}
-                <p>{item.name}</p>
+                <svg className="w-8 h-8 stroke-[#B7B7B7]">{item.icon}</svg>
+                <p className="text-sm mt-1 text-[#B7B7B7]">{item.name}</p>
               </NavLink>
             </li>
           ))}

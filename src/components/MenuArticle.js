@@ -2,9 +2,9 @@ import React from "react";
 
 const MenuArticle = ({ title, content, onClick }) => {
   return (
-    <article className="category" onClick={onClick}>
+    <article className="flex items-center cursor-pointer" onClick={onClick}>
       <img src={content} />
-      <h2>{title}</h2>
+      <h2 className="text-lg text-white font-semibold">{title}</h2>
     </article>
   );
 };

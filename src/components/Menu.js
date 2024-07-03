@@ -9,7 +9,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="generalContainer">
+    <div className="grid grid-cols-[48.5%_48.5%] gap-[3%] mb-6 px-4">
       <MenuArticle
         title={"Exercices"}
         content={"./img/icons/dumbell-fitness-svgrepo-com.svg"}

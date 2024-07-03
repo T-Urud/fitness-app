@@ -2,17 +2,21 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header>
-      <div className="userContainer">
-        <div className="profilePic">
-          <img src="./black-screen.png" alt="profile pic" />
+    <header className="flex items-center justify-between padding: 1rem 0.75rem">
+      <div className="flex gap-4">
+        <div className="w-9 h-9 flex items-center justify-center rounded-full overflow-hidden">
+          <img
+            src="./black-screen.png"
+            alt="profile pic"
+            className="w-full h-auto object-cover"
+          />
         </div>
         <div className="profileInfos">
-          <h1>Theo Main</h1>
-          <p>Reached goals: 5</p>
+          <h1 className="text-2xl text-white">Theo Main</h1>
+          <p className="text-white">Reached goals: 5</p>
         </div>
       </div>
-      <div className="hideMenuContainer">
+      <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
