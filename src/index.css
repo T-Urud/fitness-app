@@ -10,7 +10,7 @@
   }
 }
 
-@layer body{
+@layer utilities{
   body{
     margin: 0 auto;
     height: 100vh;

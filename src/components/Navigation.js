@@ -71,6 +71,7 @@ const navItems = [
 ];
 
 const Navigation = () => {
+  const nav = { isActive: true };
   return (
     <div>
       <nav className="border-t-1 border-solid border-[rgb(193, 192, 192)] fixed bottom-0 left-0 right-0 py-1">
@@ -82,7 +83,9 @@ const Navigation = () => {
             >
               <NavLink
                 to={item.path}
-                className={(nav) => (nav.isActive ? "text-black" : "")}
+                className={`flex flex-col items-center ${
+                  nav.isActive ? "text-black" : ""
+                }`}
               >
                 <svg className="w-8 h-8 stroke-[#B7B7B7]">{item.icon}</svg>
                 <p className="text-sm mt-1 text-[#B7B7B7]">{item.name}</p>
