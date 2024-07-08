@@ -10,15 +10,16 @@ const Carousel = ({ images }) => {
     setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
   return (
-    <div className="relative h-[50vh]">
+    <section className="relative h-[50vh] w-full">
       <button
-        className="absolute bg-none outline-none border-none z-10 text-4xl cursor-pointer text-black translate-y-1/2 top-1/2 -left-1"
+        className="absolute bg-none outline-none border-none z-10 text-4xl cursor-pointer text-black  top-1/2"
         onClick={prevSlide}
       >
         &#10096;
       </button>
       <button
-        className="absolute bg-none outline-none border-none z-10 text-4xl cursor-pointer text-black translate-y-1/2 top-1/2 -right-1"
+        className="absolute bg-none outline-none border-none z-10 text-4xl cursor-pointer text-black top-1/2 -right-0.5"
+        // className="invisible absolute z-10 text-4xl top-1/2 -right-0.5"
         onClick={nextSlide}
       >
         &#10097;
@@ -40,7 +41,7 @@ const Carousel = ({ images }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
 

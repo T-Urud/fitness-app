@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between padding: 1rem 0.75rem">
+    <header className="flex items-center justify-between py-4 px-3">
       <div className="flex gap-4">
         <div className="w-9 h-9 flex items-center justify-center rounded-full overflow-hidden">
           <img

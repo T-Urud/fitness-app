@@ -71,11 +71,11 @@ const navItems = [
 ];
 
 const Navigation = () => {
-  const nav = { isActive: true };
+  // const nav = { isActive: true };
   return (
-    <div>
-      <nav className="border-t-1 border-solid border-[rgb(193, 192, 192)] fixed bottom-0 left-0 right-0 py-1">
-        <ul className="flex content-evenly gap-12">
+    <footer>
+      <nav className="border-t border-solid border-gray-300 fixed bottom-0 left-0 right-0 py-1">
+        <ul className="flex justify-evenly gap-12 py-2">
           {navItems.map((item, index) => (
             <li
               key={index}
@@ -83,18 +83,20 @@ const Navigation = () => {
             >
               <NavLink
                 to={item.path}
-                className={`flex flex-col items-center ${
-                  nav.isActive ? "text-black" : ""
-                }`}
+                className={({ isActive }) =>
+                  `flex flex-col items-center ${
+                    isActive ? "text-black" : "text-gray-400"
+                  }`
+                }
               >
-                <svg className="w-8 h-8 stroke-[#B7B7B7]">{item.icon}</svg>
-                <p className="text-sm mt-1 text-[#B7B7B7]">{item.name}</p>
+                {item.icon}
+                <p className="text-sm mt-1">{item.name}</p>
               </NavLink>
             </li>
           ))}
         </ul>
       </nav>
-    </div>
+    </footer>
   );
 };
 
