@@ -7,16 +7,14 @@ import Friends from "./pages/Friends";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Profile />} />
-          <Route path="/friends" element={<Friends />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/exercices" element={<Exercice />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Profile />} />
+        <Route path="/friends" element={<Friends />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/exercices" element={<Exercice />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
