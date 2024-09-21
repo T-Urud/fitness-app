@@ -3,6 +3,7 @@ import Navigation from "../components/Navigation";
 import Carousel from "../components/Carousel";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
+import Classes from "../components/Classes";
 
 const Profile = () => {
   const images = [
@@ -15,7 +16,9 @@ const Profile = () => {
     <div>
       <Header />
       <Menu />
-      <Carousel images={images} />
+      {/* <Carousel images={images} /> */}
+      {/* add graph stats */}
+      <Classes images={images} />
       <Navigation />
     </div>
   );

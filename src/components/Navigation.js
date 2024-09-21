@@ -8,8 +8,8 @@ const navItems = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -29,8 +29,8 @@ const navItems = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -52,8 +52,30 @@ const navItems = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="lucide lucide-circle-user-round"
+      >
+        <path d="M18 20a6 6 0 0 0-12 0" />
+        <circle cx="12" cy="10" r="4" />
+        <circle cx="12" cy="12" r="10" />
+      </svg>
+    ),
+  },
+  {
+    name: "Trainer",
+    path: "/trainer",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -71,9 +93,8 @@ const navItems = [
 ];
 
 const Navigation = () => {
-  // const nav = { isActive: true };
   return (
-    <nav className="border-t border-solid border-gray-300 fixed bottom-0 left-0 right-0 py-1">
+    <nav className="border-t border-solid border-gray-300 fixed bottom-0 left-0 right-0 py-1 bg-white z-10">
       <ul className="flex justify-evenly gap-12 py-2">
         {navItems.map((item, index) => (
           <li
@@ -84,7 +105,7 @@ const Navigation = () => {
               to={item.path}
               className={({ isActive }) =>
                 `flex flex-col items-center ${
-                  isActive ? "text-black" : "text-gray-400"
+                  isActive ? "text-black font-semibo24" : "text-gray-400"
                 }`
               }
             >

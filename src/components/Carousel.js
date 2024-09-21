@@ -11,7 +11,7 @@ const Carousel = ({ images }) => {
   };
   return (
     <section className="relative h-[50vh] w-full">
-      <button
+      {/* <button
         className="absolute bg-none outline-none border-none z-10 text-4xl cursor-pointer text-black  top-1/2"
         onClick={prevSlide}
       >
@@ -19,11 +19,10 @@ const Carousel = ({ images }) => {
       </button>
       <button
         className="absolute bg-none outline-none border-none z-10 text-4xl cursor-pointer text-black top-1/2 -right-0.5"
-        // className="invisible absolute z-10 text-4xl top-1/2 -right-0.5"
         onClick={nextSlide}
       >
         &#10097;
-      </button>
+      </button> */}
       <ul>
         {images.map((image, index) => (
           <li
