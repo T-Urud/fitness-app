@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navigation from "../components/Navigation";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 const Exercice = () => {
   const [exoData, setExoData] = useState([]);
   const [error, setError] = useState(null);
@@ -15,8 +17,7 @@ const Exercice = () => {
             headers: {
               "X-RapidAPI-Host":
                 "exercise-db-fitness-workout-gym.p.rapidapi.com",
-              "X-RapidAPI-Key":
-                "1eede8bc94msh322d92a53e7c23ap1b9be9jsn0b65ff3ce657",
+              "X-RapidAPI-Key": API_KEY,
             },
           }
         );

@@ -39,18 +39,18 @@ const Header = () => {
           Socials
         </NavLink>
         <NavLink
-          to="/"
-          className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-        >
-          Profile
-        </NavLink>
-        <NavLink
           to="/trainer"
           className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
           onClick={() => setIsOpen((isOpen) => !isOpen)}
         >
           Trainer
+        </NavLink>
+        <NavLink
+          to="/"
+          className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
+        >
+          Profile
         </NavLink>
         <Link
           smooth

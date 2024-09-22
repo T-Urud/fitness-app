@@ -110,10 +110,9 @@ const Trainer = () => {
               }}
               transition={{ duration: 1.5, ease: "easeIn" }}
             >
-              {/* <Appointment date={date.setDate(date.getDate() + 7)} day={day} /> */}
-              <Appointment date={date} day={day} />
-              <Appointment date={date} day={day} />
-              <Appointment date={date} day={day} />
+              <Appointment date={"Sep 30, 2024"} day={day} />
+              <Appointment date={"Oct 7, 2024"} day={day} />
+              <Appointment date={"Oct 14, 2024"} day={day} />
             </motion.div>
           </div>
         </div>
