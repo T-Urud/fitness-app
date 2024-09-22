@@ -25,11 +25,32 @@ const Header = () => {
         className="fixed w-screen h-screen left-0 top-0 mt-[75px] bg-[#EEEDEB] translate-x-0 flex flex-col z-50 md:hidden"
       >
         <NavLink
+          to="/home"
+          className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
+        >
+          Home
+        </NavLink>
+        <NavLink
           to="/friends"
           className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
           onClick={() => setIsOpen((isOpen) => !isOpen)}
         >
           Socials
+        </NavLink>
+        <NavLink
+          to="/"
+          className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
+        >
+          Profile
+        </NavLink>
+        <NavLink
+          to="/trainer"
+          className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
+        >
+          Trainer
         </NavLink>
         <Link
           smooth
@@ -37,15 +58,7 @@ const Header = () => {
           className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px] mr-5"
           onClick={() => setIsOpen((isOpen) => !isOpen)}
         >
-          Settings
-        </Link>
-        <Link
-          smooth
-          to="#contact"
-          className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px] mr-5"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-        >
-          Log Out
+          Settings/Log out
         </Link>
       </motion.div>
       <div className="font-semibold text-sm">

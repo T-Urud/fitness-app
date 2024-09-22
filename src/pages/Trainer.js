@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import Appointment from "../components/Appointment";
-import { li } from "framer-motion/client";
+import { motion } from "framer-motion";
 
 const Trainer = () => {
   const [trainerName, setTrainerName] = useState("Theo");
+  const [nbOfAppointment, setNbOfAppointment] = useState(5);
   const [date, setDate] = useState("");
   const [day, setDay] = useState("");
 
@@ -53,9 +53,9 @@ const Trainer = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div>
+    <div className="pb-4">
       <Header />
-      <main className="relative">
+      <main>
         <div className="flex flex-col items-center bg-[#EEEDEB] py-6 px-10">
           <span className="font-semibold text-sm">{date}</span>
           <div className="flex flex-col items-center text-center">
@@ -68,7 +68,7 @@ const Trainer = () => {
               className="w-full h-auto max-w-[96px] max-h-[96px] object-cover rounded-full my-4"
             />
             <p className="text-sm">
-              You have your first virtual appointment with
+              You have your weekly virtual appointment with
               <span className="font-semibold"> {trainerName}</span> today.
               Review the checklist now to make the most of your time !
             </p>
@@ -90,14 +90,34 @@ const Trainer = () => {
             </span>
           </div>
           <div className="flex flex-col gap-4">
-            <Appointment date={date} day={day} />
-            <Appointment date={`${date} +1`} day={day} />
-            <Appointment date={date} day={day} />
-            {/* click on view all --> apparition */}
+            <div>
+              <Appointment date={date} day={day} />
+            </div>
+            {!isClicked && (
+              <div className="flex items-center justify-center h-8 bg-[#2758a3] text-white rounded-xl mt-4 font-semibold">
+                <span>
+                  You have {nbOfAppointment}{" "}
+                  {nbOfAppointment <= 1 ? "session" : "sessions"} left !
+                </span>
+              </div>
+            )}
+            <motion.div
+              className="flex-col gap-4"
+              initial={{ display: "none", opacity: 0 }}
+              animate={{
+                display: isClicked ? "flex" : "none",
+                opacity: [0, 0.6, 1],
+              }}
+              transition={{ duration: 1.5, ease: "easeIn" }}
+            >
+              {/* <Appointment date={date.setDate(date.getDate() + 7)} day={day} /> */}
+              <Appointment date={date} day={day} />
+              <Appointment date={date} day={day} />
+              <Appointment date={date} day={day} />
+            </motion.div>
           </div>
         </div>
       </main>
-      <Navigation />
     </div>
   );
 };
