@@ -1,6 +1,6 @@
 import React from "react";
 
-const Appointment = () => {
+const Appointment = ({ date, day }) => {
   return (
     <div className="bg-[#EEEDEB] rounded-xl p-4 cursor-pointer">
       <div className="rounded-full bg-[#2758a3] max-w-[75px] text-white flex items-center justify-center gap-1">
@@ -19,7 +19,10 @@ const Appointment = () => {
       </div>
       <div className="flex flex-col font-bold mt-2 leading-tight">
         <div className="flex items-center justify-between">
-          <h3>Today Aug 26, 6:00 PM</h3>
+          <h3>
+            {day} {date}
+          </h3>
+          {/* <h3>Today Aug 26, 6:00 PM</h3> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="18"

@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import Appointment from "../components/Appointment";
+import { li } from "framer-motion/client";
 
 const Trainer = () => {
   const [trainerName, setTrainerName] = useState("Theo");
   const [date, setDate] = useState("");
+  const [day, setDay] = useState("");
 
   const formatDate = (date) => {
     const months = [
@@ -28,14 +30,27 @@ const Trainer = () => {
     return `${month} ${day}, ${year}`;
   };
 
-  const updateDate = () => {
+  const currentDate = () => {
     const now = new Date();
     setDate(formatDate(now));
   };
 
+  const getDayDate = (day) => {
+    const today = day.getDay();
+    const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    return weekDays[day.getDay()];
+  };
+  const currentDay = () => {
+    const now = new Date();
+    setDay(getDayDate(now));
+  };
+
   useEffect(() => {
-    updateDate();
+    currentDate();
+    currentDay();
   }, []);
+
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
     <div>
@@ -67,13 +82,17 @@ const Trainer = () => {
         <div className="mt-5 px-5">
           <div className="flex items-center justify-between mb-2 text-[0.8rem]">
             <h2 className="font-bold">Upcoming appointments</h2>
-            <span className="uppercase font-semibold">View all</span>
+            <span
+              className="uppercase font-semibold cursor-pointer"
+              onClick={() => setIsClicked(true)}
+            >
+              View all
+            </span>
           </div>
           <div className="flex flex-col gap-4">
-            <Appointment />
-            <Appointment />
-            <Appointment />
-            <Appointment />
+            <Appointment date={date} day={day} />
+            <Appointment date={`${date} +1`} day={day} />
+            <Appointment date={date} day={day} />
             {/* click on view all --> apparition */}
           </div>
         </div>
