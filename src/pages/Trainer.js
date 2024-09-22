@@ -57,7 +57,7 @@ const Trainer = () => {
       <Header />
       <main>
         <div className="flex flex-col items-center bg-[#EEEDEB] py-6 px-10">
-          <span className="font-semibold text-sm">{date}</span>
+          <span className="font-semibold text-sm mb-2">{date}</span>
           <div className="flex flex-col items-center text-center">
             <h1 className="text-[2rem] font-bold leading-none">
               Prepare for today's appointment
@@ -82,33 +82,39 @@ const Trainer = () => {
         <div className="mt-5 px-5">
           <div className="flex items-center justify-between mb-2 text-[0.8rem]">
             <h2 className="font-bold">Upcoming appointments</h2>
-            <span
-              className="uppercase font-semibold cursor-pointer"
-              onClick={() => setIsClicked(true)}
-            >
-              View all
-            </span>
+            {!isClicked && (
+              <span
+                className="uppercase font-semibold cursor-pointer"
+                onClick={() => setIsClicked(true)}
+              >
+                View all
+              </span>
+            )}
           </div>
           <div className="flex flex-col gap-4">
             <div>
               <Appointment date={date} day={day} />
             </div>
             {!isClicked && (
-              <div className="flex items-center justify-center h-8 bg-[#2758a3] text-white rounded-xl mt-4 font-semibold">
+              <motion.div
+                className="flex items-center justify-center h-8 bg-[#2758a3] text-white rounded-xl mt-4 font-semibold"
+                initial={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
                 <span>
-                  You have {nbOfAppointment}{" "}
-                  {nbOfAppointment <= 1 ? "session" : "sessions"} left !
+                  You have {nbOfAppointment}
+                  {nbOfAppointment <= 1 ? " session" : " sessions"} left !
                 </span>
-              </div>
+              </motion.div>
             )}
             <motion.div
               className="flex-col gap-4"
               initial={{ display: "none", opacity: 0 }}
               animate={{
                 display: isClicked ? "flex" : "none",
-                opacity: [0, 0.6, 1],
+                opacity: isClicked ? [0, 0.6, 1] : 0,
               }}
-              transition={{ duration: 1.5, ease: "easeIn" }}
+              transition={{ duration: 0.3, ease: "easeIn" }}
             >
               <Appointment date={"Sep 30, 2024"} day={day} />
               <Appointment date={"Oct 7, 2024"} day={day} />

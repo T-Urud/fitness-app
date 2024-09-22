@@ -32,13 +32,6 @@ const Header = () => {
           Home
         </NavLink>
         <NavLink
-          to="/friends"
-          className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
-        >
-          Socials
-        </NavLink>
-        <NavLink
           to="/trainer"
           className="font-semibold text-2xl leading-[30px] text-black ml-5 mt-[30px]"
           onClick={() => setIsOpen((isOpen) => !isOpen)}

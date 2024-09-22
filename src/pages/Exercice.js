@@ -12,7 +12,8 @@ const Exercice = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "https://exercise-db-fitness-workout-gym.p.rapidapi.com/list/equipment",
+          "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+          // "https://exercise-db-fitness-workout-gym.p.rapidapi.com/list/equipment",
           {
             headers: {
               "X-RapidAPI-Host":
@@ -22,6 +23,7 @@ const Exercice = () => {
           }
         );
         setExoData(res.data.list);
+        console.log(res.data);
       } catch (error) {
         setError(error);
       }
@@ -31,6 +33,7 @@ const Exercice = () => {
 
   return (
     <div>
+      <p>exoData.</p>
       <ul>
         {exoData.map((equipment, index) => (
           <li key={index}>
