@@ -11,6 +11,7 @@ const variants = {
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [goalsReached, setGoalsReached] = useState(4);
+  const [username, setUsername] = useState("John");
   return (
     <header
       className={`flex justify-between items-center h-[75px] px-3 z-[100] bg-[#EEEDEB] md:h-unset md:py-2 md:mt-3 ${
@@ -54,7 +55,7 @@ const Header = () => {
             alt="profile pic"
             className="w-full h-auto max-w-[36px] max-h-[36px] object-cover rounded-full"
           />
-          <span>THEO</span>
+          <span>{username}</span>
         </a>
         <span>Goals Reached: {goalsReached}</span>
       </div>

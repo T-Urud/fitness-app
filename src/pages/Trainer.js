@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Appointment from "../components/Appointment";
 
 const Trainer = () => {
-  const [trainerName, setTrainerName] = useState("John");
+  const [trainerName, setTrainerName] = useState("Theo");
   const [date, setDate] = useState("");
 
   const formatDate = (date) => {
@@ -25,7 +25,7 @@ const Trainer = () => {
     const day = date.getDate();
     const month = months[date.getMonth()];
     const year = date.getFullYear();
-    return `${month}/${day}/${year}`;
+    return `${month} ${day}, ${year}`;
   };
 
   const updateDate = () => {
@@ -73,6 +73,8 @@ const Trainer = () => {
             <Appointment />
             <Appointment />
             <Appointment />
+            <Appointment />
+            {/* click on view all --> apparition */}
           </div>
         </div>
       </main>
